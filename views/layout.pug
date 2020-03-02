@@ -6,7 +6,11 @@ html
         link(rel='stylesheet', href='/stylesheets/style.css')
     body
         div.title-Custom #{title}
+        div.header #{header}
     div.column.nav-default Site Navigation
+        br
+        br
+        a(href='/') Return Home
         ul
             li
                 a(href='/inHouseServices') In-House Services
@@ -49,6 +53,7 @@ html
                     li
                         a(href='/donations/payPal') PayPal
         div.user-login User Login
+            p
             form(method="POST" action="/users/login")
                 #error
                     if error
@@ -86,5 +91,4 @@ html
                     )
                     a Remember Me
             br
-            a(href='/') Return Home
     block content
