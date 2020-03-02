@@ -1,13 +1,18 @@
 var express = require('express');
 var router = express.Router();
 
+/* GET okta home page. */
+router.get('/oktaIndex', function(req, res, next) {
+    res.render('oktaIndex', { title: 'Okta Index Page Test' });
+});
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('index', { title: 'Best Community Service', 
                           header: 'Welcome!' });
 });
 
-/* GET home page. */
+/* GET inHouseServices page. */
 router.get('/inHouseServices', function(req, res, next) {
     res.render('inHouseServices', { title: 'Best Community Service' , 
                           header: 'In House Services' });
