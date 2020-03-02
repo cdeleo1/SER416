@@ -109,4 +109,10 @@ router.get('/donations/payPal', function(req, res, next) {
                           header: 'PayPal' });
 });
 
+/* POST user login page. */
+router.post('/user/login', function(req, res, next) {
+    res.render('users', { title: 'Best Community Service' , 
+                          header: 'Welcome, Current User!'});
+});
+
 module.exports = router;
