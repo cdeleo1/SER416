@@ -1,8 +1,121 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 10px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 a {
-  color: #00B7FF;
+    color: #000000;
+    font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+
+h4-Custom {
+    color: #000000;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+title-Custom {
+    display: block;
+    color: #000000;
+    font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    height: fit-content;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #000000;
+}
+
+nav-default {
+    display: block;
+    color: #000000;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    text-align: left;
+    position: relative;
+    height: fit-content;
+    width: inherit;
+    padding: 5px;
+    border: 1px solid #000000;
+}
+
+user-login {
+    display: block;
+    color: #000000;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    text-align: left;
+    position: static;
+    padding: 5px;
+    width: inherit;
+}
+
+copyright {
+    display: block;
+    color: #000000;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: inherit;
+    height: auto;
+    position: relative;
+}
+
+left-panel {
+    display: block;
+    position: relative;
+    top: 20px;
+    left: 5px;
+    height: fit-content;
+    width: fit-content;
+    padding: 5px;
+}
+
+main-content {
+    display: block;
+    color: #000000;
+    font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    text-align: center;
+    width: inherit;
+    position: inherit;
 }

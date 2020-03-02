@@ -1,5 +1,87 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}!
+  title-Custom Best Community Service
+    left-panel
+      nav-default Site Navigation
+        ul
+          li
+            a(href='/inHouseServices') In-House Services
+                ul
+                    li
+                        a(href='/inHouseServices/classes') Classes
+                        ul
+                            li
+                                a(href='/inHouseServices/classes/spanishLanguage') Spanish Language
+                            li
+                                a(href='/inHouseServices/classes/artsAndCrafts') Arts and Crafts
+                            li
+                                a(href='/inHouseServices/classes/painting') Painting
+                    li
+                        a(href='/inHouseServices/eventRentals') Event Rentals
+                        ul
+                            li
+                                a(href='/inHouseServices/eventRentals/equipment') Equipment
+                            li
+                                a(href='/inHouseServices/eventRentals/venues') Venues
+                li
+                    a(href='/externalServices') External Services
+                    ul
+                        li
+                            a(href='/externalServices/homeCare') Home Care
+                        li
+                            a(href='/externalServices/shuttles') Shuttles
+                li
+                    a(href='/volunteering') Volunteering
+                    ul
+                        li
+                            a(href='/volunteering/currentOpportunities') Current Opportunities
+                        li
+                            a(href='/volunteering/offerAService') Offer a Service
+                li
+                    a(href='/donations') Donations
+                    ul
+                        li
+                            a(href='/donations/goodsDropOff') Goods Drop-Off
+                        li
+                            a(href='/donations/payPal') PayPal
+      user-login User Login
+          form(method="POST" action="/users/login")
+            #error
+              if error
+                p.text-danger Error!
+            div
+              label(for='email')
+              input#email.form-control(
+                type='email'
+                name='username'
+                placeholder='Email Address'
+                required
+                autofocus
+                style='width: 171px; height: 17px;'
+              )
+            div
+              label(for='password')
+              input#password.form-control(
+                type='password'
+                name='password'
+                placeholder='Password'
+                required
+                style='width: 171px; height: 17px;'
+              )
+            button.btn.btn-primary(
+              type='submit'
+              value='Login'
+              style='width: 175px; height: 25px;'
+            )
+              a Login
+            div
+              label(for='remember-me')
+              input#remember-me.form-control(
+                type='checkbox'
+                name='remember-me'
+              )
+              a Remember Me
+            
+    main-content Main content will go here.
+    copyright © 2019-2020

@@ -8,7 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 // BEGIN MONGOOSE DB INITIALIZATION
-const MongoClient = require('mongodb').MongoClient;
+const mongodb = require('mongodb');
+const MongoClient = mongodb.MongoClient;
 const assert = require('assert');
 
 // Connection URL
@@ -39,7 +40,7 @@ const findDocuments = function(db, callback) {
   collection.find({}).toArray(function(err, docs) {
     assert.equal(err, null);
     console.log("Found the following records");
-    console.log(docs)
+    console.log(docs);
     callback(docs);
   });
 };
@@ -102,25 +103,6 @@ const indexCollection = function(db, callback) {
   );
 };
 
-// Use connect method to connect to the server
-MongoClient.connect(url, function(err, client) {
-  assert.equal(null, err);
-  console.log("Connected successfully to server");
-
-  const db = client.db(dbName);
-
-    insertDocuments(db, function() {
-        indexCollection(db, function() {
-            updateDocument(db, function() {
-                removeDocument(db, function() {
-                    client.close();
-                });
-            });
-        });
-    });
-});
-// END MONGOOSE DB INITIALIZATION
-
 var app = express();
 
 // view engine setup
@@ -151,5 +133,24 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// Use connect method to connect to the server
+MongoClient.connect(url, function(err, client) {
+  assert.equal(null, err);
+  console.log("Connected successfully to server");
+
+  const db = client.db(dbName);
+
+    insertDocuments(db, function() {
+        indexCollection(db, function() {
+            updateDocument(db, function() {
+                removeDocument(db, function() {
+                    client.close();
+                });
+            });
+        });
+    });
+});
+// END MONGOOSE DB INITIALIZATION
 
 module.exports = app;
